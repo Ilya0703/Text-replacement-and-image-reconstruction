@@ -13,7 +13,7 @@ joinedBoxes = sorted(joinedBoxes, key=lambda x: (x[1], x[0]))
 imageReconstructed = image.copy()
 for box in joinedBoxes:
     imageReconstructed = recounstruction.reconstruct(imageReconstructed, box)
-
+cv2.imwrite("after_reconstruction.png", imageReconstructed)
 index = 0
 with open("new_text.txt", 'r') as file:
     lines = file.readlines()
